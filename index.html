@@ -3,149 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quy Nhơn Travel - Thiên Đường Biển Xanh</title>
+    <title>Quy Nhơn Luxury Travel - Trải Nghiệm Khác Biệt</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .glass {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        .hero-gradient {
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1589149053231-477503f83713?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        .glass { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        .hero-video { position: relative; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1589149053231-477503f83713?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; }
+        .text-gradient { background: linear-gradient(to r, #FACC15, #FB923C); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .fomo-popup { animation: slideUp 0.5s ease-out; }
+        @keyframes slideUp { from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body class="bg-white text-slate-900 overflow-x-hidden">
 
-    <nav class="fixed w-full z-50 glass mt-4 mx-auto max-w-7xl left-0 right-0 rounded-full px-8 py-4 flex justify-between items-center">
-        <div class="text-2xl font-bold text-white tracking-tighter">QUYNHON<span class="text-yellow-400">TOUR</span></div>
-        <div class="hidden md:flex space-x-8 text-white font-medium">
-            <a href="#itinerary" class="hover:text-yellow-400 transition">Lịch trình</a>
+    <div class="bg-red-600 text-white text-center py-2 px-4 text-xs md:text-sm font-bold z-[60] relative">
+        ⚡ ƯU ĐÃI THÁNG 5: Giảm ngay 1.000.000đ cho nhóm đăng ký từ 4 người. Còn <span id="countdown">00:45:00</span>
+    </div>
+
+    <nav class="fixed w-[95%] z-50 glass mt-12 left-1/2 -translate-x-1/2 rounded-2xl px-6 py-4 flex justify-between items-center transition-all">
+        <div class="text-xl font-extrabold text-white tracking-tighter">QUYNHON<span class="text-yellow-400">LUXURY</span></div>
+        <div class="hidden lg:flex space-x-8 text-white font-medium text-sm">
             <a href="#destinations" class="hover:text-yellow-400 transition">Điểm đến</a>
             <a href="#pricing" class="hover:text-yellow-400 transition">Bảng giá</a>
+            <a href="#reviews" class="hover:text-yellow-400 transition">Khách hàng</a>
         </div>
-        <button class="bg-yellow-400 hover:bg-yellow-500 text-slate-900 px-6 py-2 rounded-full font-bold transition shadow-lg">
-            Đặt ngay
-        </button>
+        <a href="#booking" class="bg-yellow-400 hover:bg-yellow-500 text-slate-900 px-5 py-2 rounded-xl font-bold text-sm transition shadow-lg">
+            Nhận báo giá
+        </a>
     </nav>
 
-    <section class="h-screen hero-gradient flex items-center justify-center text-center px-4">
-        <div class="max-w-4xl">
-            <span class="text-yellow-400 font-semibold tracking-widest uppercase mb-4 block">Khám phá vẻ đẹp bất tận</span>
-            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-                Quy Nhơn: Maldives <br> Giữa Lòng Miền Trung
+    <section class="h-screen hero-video flex items-center justify-center text-center px-6">
+        <div class="max-w-5xl">
+            <div class="inline-flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full mb-8 backdrop-blur-md">
+                <span class="relative flex h-3 w-3">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-yellow-500"></span>
+                </span>
+                <span class="text-white text-xs font-bold uppercase tracking-widest">Đang có 12 người xem tour này</span>
+            </div>
+            <h1 class="text-5xl md:text-8xl font-extrabold text-white mb-6 leading-[1.1]">
+                Đánh thức hè <br> <span class="text-gradient">Quy Nhơn rực rỡ</span>
             </h1>
-            <p class="text-xl text-slate-100 mb-8 max-w-2xl mx-auto font-light">
-                Trải nghiệm những bãi biển hoang sơ, làn nước trong xanh vắt và ẩm thực hải sản phong phú với tour trọn gói 3N2Đ.
+            <p class="text-lg md:text-xl text-slate-200 mb-10 max-w-2xl mx-auto font-light">
+                Trải nghiệm kỳ nghỉ thượng lưu tại Maldives Việt Nam. Tour trọn gói, cam kết không phát sinh, hỗ trợ nhiếp ảnh chuyên nghiệp suốt hành trình.
             </p>
-            <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="#booking" class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 shadow-xl">
-                    Xem ưu đãi mùa hè
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#booking" class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl text-lg font-bold transition-all transform hover:scale-105 shadow-2xl">
+                    Giữ chỗ ngay - Trả sau
                 </a>
-                <button class="glass text-white px-10 py-4 rounded-xl text-lg font-semibold hover:bg-white/10 transition">
-                    Tư vấn miễn phí
+                <button class="bg-white/10 hover:bg-white/20 text-white px-10 py-5 rounded-2xl text-lg font-bold backdrop-blur-md transition">
+                    Xem lịch trình 3N2Đ
                 </button>
             </div>
         </div>
     </section>
 
-    <section class="py-24 max-w-7xl mx-auto px-4" id="destinations">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold text-slate-800">Những điểm đến "gây thương nhớ"</h2>
-            <div class="h-1 w-20 bg-yellow-400 mx-auto mt-4"></div>
+    <section id="destinations" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div class="max-w-xl">
+                <h2 class="text-4xl font-extrabold text-slate-900 mb-4">Tuyệt tác thiên nhiên tại Quy Nhơn</h2>
+                <p class="text-slate-500 text-lg">Chúng tôi không chỉ bán tour, chúng tôi mang đến những khoảnh khắc đáng nhớ nhất trong cuộc đời bạn.</p>
+            </div>
+            <div class="flex gap-4">
+                <div class="text-center bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                    <p class="text-2xl font-bold text-blue-600">4.9/5</p>
+                    <p class="text-xs text-slate-400 uppercase font-bold tracking-tighter">Đánh giá Google</p>
+                </div>
+            </div>
         </div>
         
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="group overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition duration-500">
-                <div class="relative h-80 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?q=80&w=2073&auto=format&fit=crop" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Kỳ Co">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                    <div class="absolute bottom-6 left-6 text-white">
-                        <h3 class="text-2xl font-bold">Bãi tắm Kỳ Co</h3>
-                        <p class="text-sm opacity-80">Làn nước 2 màu kỳ diệu</p>
-                    </div>
+        <div class="grid md:grid-cols-12 gap-6">
+            <div class="md:col-span-8 group relative h-[500px] overflow-hidden rounded-[2.5rem] shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?q=80&w=2073" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Kỳ Co">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-10 left-10 text-white">
+                    <span class="bg-yellow-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block">HOT DESTINATION</span>
+                    <h3 class="text-4xl font-bold mb-2">Bãi tắm Kỳ Co</h3>
+                    <p class="text-slate-200 max-w-md">Làn nước xanh ngọc bích hai màu rõ rệt, được ví như thiên đường Maldives tại Việt Nam.</p>
                 </div>
             </div>
-
-            <div class="group overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition duration-500">
-                <div class="relative h-80 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Eo Gió">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                    <div class="absolute bottom-6 left-6 text-white">
-                        <h3 class="text-2xl font-bold">Eo Gió</h3>
-                        <p class="text-sm opacity-80">Nơi ngắm hoàng hôn đẹp nhất</p>
-                    </div>
+            <div class="md:col-span-4 flex flex-col gap-6">
+                <div class="group relative h-[238px] overflow-hidden rounded-[2.5rem] shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=2070" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition"></div>
+                    <div class="absolute bottom-6 left-6 text-white"><h4 class="font-bold text-xl">Eo Gió</h4></div>
                 </div>
-            </div>
-
-            <div class="group overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition duration-500">
-                <div class="relative h-80 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073&auto=format&fit=crop" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Hòn Khô">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                    <div class="absolute bottom-6 left-6 text-white">
-                        <h3 class="text-2xl font-bold">Hòn Khô</h3>
-                        <p class="text-sm opacity-80">Lặn ngắm san hô rực rỡ</p>
-                    </div>
+                <div class="group relative h-[238px] overflow-hidden rounded-[2.5rem] shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition"></div>
+                    <div class="absolute bottom-6 left-6 text-white"><h4 class="font-bold text-xl">Hòn Khô</h4></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 bg-slate-900 text-white overflow-hidden relative" id="booking">
-        <div class="max-w-7xl mx-auto px-4 relative z-10 flex flex-col md:flex-row gap-16">
-            <div class="md:w-1/2">
-                <h2 class="text-4xl font-bold mb-6">Đừng bỏ lỡ ưu đãi <span class="text-yellow-400">Giảm 20%</span> cho nhóm 5 người!</h2>
-                <p class="text-slate-400 mb-8 text-lg">Để lại thông tin, chuyên viên tư vấn của chúng tôi sẽ thiết kế lộ trình riêng phù hợp với ngân sách của bạn trong vòng 15 phút.</p>
-                
-                <div class="space-y-4">
-                    <div class="flex items-center space-x-4">
-                        <div class="w-12 h-12 rounded-full bg-blue-600/20 flex items-center justify-center text-blue-400">✓</div>
-                        <span>Xe du lịch đời mới đưa đón tận nơi</span>
+    <section id="pricing" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6 text-center mb-16">
+            <h2 class="text-4xl font-extrabold mb-4">Lựa chọn kỳ nghỉ của bạn</h2>
+            <p class="text-slate-500">Giá trọn gói, cam kết không phụ thu ẩn</p>
+        </div>
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 px-6">
+            <div class="bg-white p-8 rounded-[2rem] border border-slate-200 hover:border-blue-500 transition shadow-lg">
+                <h3 class="text-xl font-bold mb-2 text-slate-500">Standard</h3>
+                <div class="text-4xl font-extrabold mb-6">2.990k <span class="text-sm font-normal text-slate-400">/khách</span></div>
+                <ul class="space-y-4 mb-8 text-sm text-slate-600">
+                    <li>✓ Khách sạn 3 sao trung tâm</li>
+                    <li>✓ Cano cao tốc đi Kỳ Co</li>
+                    <li>✓ Ăn trưa hải sản 7 món</li>
+                    <li class="text-slate-300">✗ Bảo hiểm du lịch cao cấp</li>
+                </ul>
+                <a href="#booking" class="block w-full text-center border-2 border-slate-200 py-4 rounded-2xl font-bold hover:bg-slate-50 transition">Chọn gói này</a>
+            </div>
+            <div class="bg-slate-900 p-8 rounded-[2rem] text-white transform md:-translate-y-6 shadow-2xl relative overflow-hidden">
+                <div class="absolute top-4 right-[-35px] bg-yellow-400 text-slate-900 text-[10px] font-extrabold py-1 px-10 rotate-45 uppercase">Best Seller</div>
+                <h3 class="text-xl font-bold mb-2 text-blue-400">Premium</h3>
+                <div class="text-4xl font-extrabold mb-6 text-white">4.500k <span class="text-sm font-normal text-slate-400">/khách</span></div>
+                <ul class="space-y-4 mb-8 text-sm text-slate-300">
+                    <li>✓ Resort 4-5 sao ven biển</li>
+                    <li>✓ Xe đưa đón riêng tại sân bay</li>
+                    <li>✓ Menu hải sản Tôm Hùm</li>
+                    <li>✓ Thợ ảnh riêng đi theo đoàn</li>
+                    <li>✓ Bảo hiểm du lịch 100tr</li>
+                </ul>
+                <a href="#booking" class="block w-full text-center bg-blue-600 py-4 rounded-2xl font-bold hover:bg-blue-700 transition shadow-xl shadow-blue-500/20">Đặt nhiều nhất</a>
+            </div>
+            <div class="bg-white p-8 rounded-[2rem] border border-slate-200 hover:border-yellow-500 transition shadow-lg">
+                <h3 class="text-xl font-bold mb-2 text-slate-500">Luxury</h3>
+                <div class="text-4xl font-extrabold mb-6">8.900k <span class="text-sm font-normal text-slate-400">/khách</span></div>
+                <ul class="space-y-4 mb-8 text-sm text-slate-600">
+                    <li>✓ Resort 5 sao cao cấp (Anantara/FLC)</li>
+                    <li>✓ Cano & Xe Limousine riêng</li>
+                    <li>✓ Gala Dinner BBQ bãi biển</li>
+                    <li>✓ Tour riêng tư 100%</li>
+                </ul>
+                <a href="#booking" class="block w-full text-center border-2 border-slate-200 py-4 rounded-2xl font-bold hover:bg-slate-50 transition">Liên hệ riêng</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-5xl font-extrabold mb-8 leading-tight">Chỉ còn 05 chỗ cuối cùng cho ưu đãi <span class="text-red-600 underline">Tháng 5!</span></h2>
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4 bg-slate-50 p-4 rounded-2xl">
+                        <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center">✓</div>
+                        <p class="font-bold">Hỗ trợ xuất hóa đơn VAT cho doanh nghiệp</p>
                     </div>
-                    <div class="flex items-center space-x-4">
-                        <div class="w-12 h-12 rounded-full bg-blue-600/20 flex items-center justify-center text-blue-400">✓</div>
-                        <span>Bảo hiểm du lịch mức bồi thường 100tr</span>
+                    <div class="flex items-center gap-4 bg-slate-50 p-4 rounded-2xl">
+                        <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center">✓</div>
+                        <p class="font-bold">Hoàn tiền 100% nếu không đúng cam kết dịch vụ</p>
                     </div>
                 </div>
             </div>
-
-            <div class="md:w-1/2">
-                <form class="bg-white p-8 rounded-3xl text-slate-900 space-y-4 shadow-2xl">
-                    <div>
-                        <label class="block text-sm font-semibold mb-2">Họ tên của bạn</label>
-                        <input type="text" placeholder="Nguyễn Văn A" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-semibold mb-2">Số điện thoại</label>
-                        <input type="tel" placeholder="0905 xxx xxx" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-semibold mb-2">Số lượng khách</label>
-                        <select class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none">
-                            <option>1 - 3 người</option>
-                            <option>4 - 6 người</option>
-                            <option>Đoàn trên 10 người</option>
-                        </select>
-                    </div>
-                    <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl transition duration-300 shadow-lg uppercase tracking-wide">
-                        Gửi yêu cầu nhận báo giá
-                    </button>
-                    <p class="text-center text-xs text-slate-500 mt-4 italic">* Thông tin của bạn được bảo mật tuyệt đối</p>
+            <div class="bg-slate-900 p-10 rounded-[3rem] shadow-3xl text-white">
+                <h3 class="text-2xl font-bold mb-6">Đăng ký tư vấn miễn phí</h3>
+                <form class="space-y-4">
+                    <input type="text" placeholder="Họ và tên" class="w-full bg-white/10 border border-white/20 px-6 py-4 rounded-xl outline-none focus:border-blue-500 transition">
+                    <input type="tel" placeholder="Số điện thoại" class="w-full bg-white/10 border border-white/20 px-6 py-4 rounded-xl outline-none focus:border-blue-500 transition">
+                    <select class="w-full bg-white/10 border border-white/20 px-6 py-4 rounded-xl outline-none focus:border-blue-500 transition text-slate-400">
+                        <option>Chọn gói tour bạn muốn</option>
+                        <option>Gói Standard</option>
+                        <option>Gói Premium (Ưu tiên)</option>
+                        <option>Gói Luxury</option>
+                    </select>
+                    <button class="w-full bg-yellow-400 text-slate-900 font-extrabold py-5 rounded-xl text-lg hover:bg-yellow-500 transition shadow-xl">GỬI YÊU CẦU NGAY</button>
                 </form>
+                <p class="text-center text-[10px] text-slate-500 mt-6 uppercase tracking-widest italic">Chúng tôi sẽ gọi lại cho bạn trong vòng 5 phút</p>
             </div>
         </div>
-        
-        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-600 rounded-full blur-[150px] opacity-20"></div>
     </section>
 
-    <footer class="py-12 text-center text-slate-500 border-t border-slate-200">
-        <p>© 2026 Quy Nhon Travel. All rights reserved. <br> Chúc bạn có một chuyến đi tuyệt vời!</p>
+    <footer class="py-12 border-t border-slate-100 text-center">
+        <div class="text-xl font-extrabold mb-4 tracking-tighter">QUYNHON<span class="text-blue-600">LUXURY</span></div>
+        <p class="text-slate-400 text-sm">© 2026. Một dự án bởi đội ngũ chuyên nghiệp. <br> Chúc bạn có một hành trình đáng nhớ tại Phú Yên và Quy Nhơn!</p>
     </footer>
 
+    <div id="fomo-popup" class="fixed bottom-6 left-6 glass p-4 rounded-2xl shadow-2xl z-[100] hidden flex items-center gap-4 border border-white/30 max-w-[300px]">
+        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center font-bold text-white shrink-0">H</div>
+        <div>
+            <p class="text-[10px] text-yellow-400 font-bold uppercase tracking-widest">Đăng ký mới</p>
+            <p class="text-xs text-white">Anh **Hoàng** vừa đặt tour Premium cho 5 người.</p>
+        </div>
+    </div>
+
+    <script>
+        // Countdown Timer logic
+        function startTimer(duration, display) {
+            var timer = duration, hours, minutes, seconds;
+            setInterval(function () {
+                hours = parseInt(timer / 3600, 10);
+                minutes = parseInt((timer % 3600) / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+                hours = hours < 10 ? "0" + hours : hours;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                display.textContent = hours + ":" + minutes + ":" + seconds;
+                if (--timer < 0) { timer = duration; }
+            }, 1000);
+        }
+        window.onload = function () {
+            startTimer(2700, document.querySelector('#countdown'));
+            
+            // Show fake social proof popup
+            setTimeout(() => {
+                document.getElementById('fomo-popup').classList.remove('hidden');
+                document.getElementById('fomo-popup').classList.add('fomo-popup');
+            }, 5000);
+        };
+    </script>
 </body>
 </html>
